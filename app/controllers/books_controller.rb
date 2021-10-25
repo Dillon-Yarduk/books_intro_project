@@ -3,5 +3,7 @@ class BooksController < ApplicationController
     @books = Book.includes(:author, :publisher)
   end
 
-  def show; end
+  def show
+    @book = Book.find(params[:id])
+  end
 end
