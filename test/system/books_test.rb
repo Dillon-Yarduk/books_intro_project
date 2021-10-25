@@ -14,9 +14,11 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on "New Book"
 
+    fill_in "Author", with: @book.author_id
     fill_in "Description", with: @book.description
     fill_in "Page count", with: @book.page_count
     fill_in "Published date", with: @book.published_date
+    fill_in "Publisher", with: @book.publisher_id
     fill_in "Title", with: @book.title
     click_on "Create Book"
 
@@ -28,9 +30,11 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on "Edit", match: :first
 
+    fill_in "Author", with: @book.author_id
     fill_in "Description", with: @book.description
     fill_in "Page count", with: @book.page_count
     fill_in "Published date", with: @book.published_date
+    fill_in "Publisher", with: @book.publisher_id
     fill_in "Title", with: @book.title
     click_on "Update Book"
 
