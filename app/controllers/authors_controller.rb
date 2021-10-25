@@ -4,6 +4,6 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @author = Author.find(params[:id])
+    @author = Author.includes(:books).find(params[:id])
   end
 end

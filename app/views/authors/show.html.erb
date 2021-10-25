@@ -5,4 +5,11 @@
   <%= @author.name %>
 </p>
 
-<%= link_to 'Back', authors_path %>
+<strong>Books:</strong>
+<ul>
+  <% @author.books.each do |book| %>
+  <li><%= link_to book.title, book %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back to Authors', authors_path %>

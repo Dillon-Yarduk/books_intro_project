@@ -16,6 +16,13 @@
 </p>
 
 <p>
+  <strong>Genres:</strong>
+  <% @book.genres.each do | genre | %>
+    <%= (link_to genre.name, genre) + ", " %>
+  <% end %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @book.description %>
 </p>
@@ -30,4 +37,4 @@
   <%= @book.published_date %>
 </p>
 
-<%= link_to 'Back', books_path %>
+<%= link_to 'Back to Books', books_path %>

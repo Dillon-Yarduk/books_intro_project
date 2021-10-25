@@ -4,4 +4,12 @@
   <strong>Name:</strong>
   <%= @publisher.name %>
 </p>
-<%= link_to 'Back', publishers_path %>
+
+<strong>Books:</strong>
+<ul>
+  <% @publisher.books.each do |book| %>
+  <li><%= link_to book.title, book %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back to Publishers', publishers_path %>

@@ -8,6 +8,7 @@
       <th>Title</th>
       <th>Publisher</th>
       <th>Author</th>
+      <th>Genres</th>
       <th>Description</th>
       <th>Page count</th>
       <th>Published date</th>
@@ -21,6 +22,11 @@
         <td><%= link_to book.title, book  %></td>
         <td><%= link_to book.publisher.name, book.publisher %></td>
         <td><%= link_to book.author.name, book.author %></td>
+        <td>
+          <% book.genres.each do | genre | %>
+            <%= (link_to genre.name, genre) + ", " %>
+          <% end %>
+        </td>
         <td><%= book.description %></td>
         <td><%= book.page_count %></td>
         <td><%= book.published_date %></td>

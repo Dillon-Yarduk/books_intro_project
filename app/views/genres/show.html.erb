@@ -5,4 +5,11 @@
   <%= @genre.name %>
 </p>
 
+<strong>Books:</strong>
+<ul>
+  <% @genre.books.each do |book| %>
+  <li><%= link_to book.title, book %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Back', genres_path %>
