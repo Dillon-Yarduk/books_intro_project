@@ -7,12 +7,12 @@
 
 <p>
   <strong>Publisher:</strong>
-  <%= @book.publisher_id %>
+  <%= link_to @book.publisher.name, @book.publisher %>
 </p>
 
 <p>
   <strong>Author:</strong>
-  <%= @book.author_id %>
+  <%= link_to @book.author.name, @book.author %>
 </p>
 
 <p>
