@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  paginates_per 15
   belongs_to :publisher
   belongs_to :author
   has_many :book_genres
