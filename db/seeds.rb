@@ -1,5 +1,6 @@
 require "csv"
 
+Page.delete_all
 BookGenre.delete_all
 Genre.delete_all
 Book.delete_all
@@ -34,3 +35,15 @@ books.each do |b|
     BookGenre.create(book: book, genre: genre)
   end
 end
+
+Page.create(
+  title:     "About",
+  content:   "Data set taken from https://www.kaggle.com/bilalyussef/google-books-dataset.\n
+              The data describes a book with a title, author, publisher, description, number of pages and the date the book was published\n
+              The data is structured such that:\n
+              A publisher may publish many books.\n
+              A author may write many books.\n
+              A book may belong to many genres.\n
+              A genre may have many books in it's category.",
+  permalink: "about"
+)
