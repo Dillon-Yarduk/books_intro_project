@@ -1,0 +1,8 @@
+<p>Found <%= pluralize(@books.count, 'Book') %> when searching for: <%= params[:keywords] %></p>
+
+<ul>
+  <% @books.each do |book|%>
+    <li><%= link_to book.title, book %></li>
+  <% end %>
+</ul>
+<%= link_to 'Back to Books', books_path %>
