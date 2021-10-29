@@ -39,7 +39,7 @@ end
 Page.create(
   title:     "About",
   content:   "Data set taken from https://www.kaggle.com/bilalyussef/google-books-dataset.\n
-              The data describes a book with a title, author, publisher, description, number of pages and the date the book was published\n
+              The data describes a book with a title, author, publisher, description, number of pages and the date the book was published.\n
               The data is structured such that:\n
               A publisher may publish many books.\n
               A author may write many books.\n
