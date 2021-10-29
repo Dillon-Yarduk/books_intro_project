@@ -6,4 +6,9 @@ class BooksController < ApplicationController
   def show
     @book = Book.includes(:genres).find(params[:id])
   end
+
+  def search
+    wildcard_search = "%#{params[:keywords]}%"
+    @books = Book.where("title LIKE ?", wildcard_search).includes(:author, :publisher, :genres)
+  end
 end
