@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "pages/about"
   root to: "books#index"
   resources :books, only: %i[index show] do
     collection do
