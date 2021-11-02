@@ -1,4 +1,12 @@
-<p>Found <%= pluralize(@books.count, 'Book') %> when searching for: <%= params[:keywords] %></p>
+<% content_for(:searched_genre_id) { params[:genre_id] }  %>
+<% content_for(:searched_keywords) { params[:keywords] }  %>
+
+<% genre =  Genre.find(params[:genre_id]) unless params[:genre_id] == '' %>
+
+<p>
+  Found <%= pluralize(@books.count, 'Book') %> when searching <%= " for, '#{params[:keywords]}'" unless params[:keywords] == '' %>
+  <%= ' in, ' + (params[:genre_id] != '' ? genre.name : "All Genres") %>
+  </p>
 
 <ul>
   <% @books.each do |book|%>

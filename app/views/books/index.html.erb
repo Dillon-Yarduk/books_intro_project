@@ -4,36 +4,23 @@
 
 <%= paginate @books %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Publisher</th>
-      <th>Author</th>
-      <th>Genres</th>
-      <th>Description</th>
-      <th>Page count</th>
-      <th>Published date</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= link_to book.title, book  %></td>
-        <td><%= link_to book.publisher.name, book.publisher %></td>
-        <td><%= link_to book.author.name, book.author %></td>
-        <td>
+<div class="container">
+  <% @books.each do |book| %>
+    <div class="row">
+      <div class="col-xl">
+        <h2><%= link_to book.title, book  %></h2>
+        <P><%= link_to book.publisher.name, book.publisher %></P>
+        <P><%= link_to book.author.name, book.author %></P>
+        <P>
           <% book.genres.each do | genre | %>
             <%= (link_to genre.name, genre) + ", " %>
           <% end %>
-        </td>
-        <td><%= book.description %></td>
-        <td><%= book.page_count %></td>
-        <td><%= book.published_date %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </P>
+        <P><%= book.description %></P>
+        <P><%= book.page_count %> Pages. -- Published on <%= book.published_date %></P>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 <%= paginate @books %>
-<br>
